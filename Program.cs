@@ -15,6 +15,14 @@ namespace Hangman
             // Choose a word randomly
             String word = words[random.Next(0, words.Count-1)];
 
+            /* Note: File has an endfile character. 
+             * To prevent this from being appended to the last word,
+             * an extra blank line is included in the file which acts as last word in the words list,
+             * and when the random word index is chosen it simply ignores the last index
+             *
+             * Hence the words.Count-1 results in ignoring last "word" in list, which is a empty line with endfile character
+            */
+
             // Game prompt/instructions
             Console.WriteLine("---           ---\n-    Hangman    -\n---           ---\n\nWelcome, the game is simple: Hangman.\nGuess characters that make up the word\nFor each correct character it fills the blank\n\nGood luck\n\n");
 
