@@ -8,10 +8,9 @@ namespace Hangman
 {
     internal class File
     {
-        public static String getFile(String path)
+        public static String getFile(String filePath)
         {
             string fileContents;
-            string filePath = Path.GetFileName(path);
 
             try
             {
@@ -25,11 +24,11 @@ namespace Hangman
             }
             catch (IOException e)
             {
-                Console.WriteLine($"[!] ERROR :: Failed to read/open file. File might not exist.\n\n\nPath: {path}\nExeception: {e}");
+                Console.WriteLine($"[!] ERROR :: Failed to read/open file. File might not exist.\n\n\nPath: {filePath}\nExeception: {e}");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[!] ERROR :: Something went wrong trying to open the file.\n\nPath: {path}\nExeception: {e}");
+                Console.WriteLine($"[!] ERROR :: Something went wrong trying to open the file.\n\nPath: {filePath}\nExeception: {e}");
             }
 
             return "";
